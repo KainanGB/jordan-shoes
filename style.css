@@ -4,7 +4,7 @@
   --primary-white-color: #f9f9f9;
   --secondary-white-color: #ebe9ea;
   --primary-gray-color: #f7f7f7;
-  --primary-back-color: #181818;
+  --primary-black-color: #181818;
 }
 
 body {
@@ -17,7 +17,8 @@ body {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  width: 100vw;
+  width: 100%;
+  background: var(--primary-white-color);
 }
 
 .header {
@@ -26,7 +27,7 @@ body {
 
 .header__info {
   color: var(--primary-white-color);
-  background-color: var(--primary-back-color);
+  background-color: var(--primary-black-color);
   width: 100%;
   padding: 1.5em 0;
   margin: 0;
@@ -36,7 +37,7 @@ body {
 
 .header__title {
   background: var(--primary-gray-color);
-  color: var(--primary-back-color);
+  color: var(--primary-black-color);
   text-align: center;
   margin: 0;
   padding: 0.8em 0;
@@ -47,24 +48,30 @@ body {
 }
 
 .main__header {
+  position: relative;
+}
+
+.main__img {
   filter: brightness(50%);
   background-image: url(./assets/Air-Jordan-1-Retro-High-OG-Wmns-TWIST-Feminino\ 1.png);
   background-repeat: no-repeat;
-  background-position: center center;
-  background-size: auto;
+  background-position: center;
+  background-size: cover;
+  background-attachment: scroll;
   width: 100%;
   height: 22em;
-  object-fit: cover;
-  object-position: bottom;
 }
 
 .main__textWrapper {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding-left: 8em;
   color: var(--primary-white-color);
   height: 100%;
+  position: absolute;
+  top: 0;
+  left: 3em;
+  z-index: 99;
 }
 
 .main__title {
@@ -75,4 +82,52 @@ body {
 .main__description {
   width: 25em;
   line-height: 2em;
+}
+
+.main__body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.cards__intro {
+  text-align: center;
+  padding: 3em 0 2em 0;
+}
+
+.cards__title {
+  color: var(--primary-black-color);
+}
+
+.cards__paragraph {
+  color: var(--primary-black-color);
+  margin: 1em 4em;
+}
+
+.cards {
+  display: flex;
+  width: 93vw;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: var(--secondary-white-color);
+  margin: 1em 0;
+  width: 15em;
+  padding: 2em;
+  position: relative;
+}
+
+.card__img {
+  position: relative;
+  right: 1em;
+}
+
+@media (max-width: 538px) {
+  .cards {
+    justify-content: center;
+  }
 }
